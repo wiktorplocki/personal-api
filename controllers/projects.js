@@ -20,7 +20,7 @@ async function create(ctx) {
 async function destroy(ctx) {
   const id = ctx.params.id;
   const project = await Project.findById(id);
-  const deletedProject = await project.remove;
+  const deletedProject = await project.remove();
   ctx.body = deletedProject;
 }
 
