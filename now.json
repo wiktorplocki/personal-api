@@ -1,0 +1,7 @@
+{
+  "env": {
+    "DB_USER": "@personal-api-db-user",
+    "DB_PASSWORD": "@personal-api-db-password",
+    "DB_URL": "@personal-api-db-url"
+  }
+}
