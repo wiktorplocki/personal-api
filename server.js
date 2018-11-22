@@ -23,15 +23,18 @@ if (process.env.NODE_ENV === "development") {
 }
 
 app.use(Cors());
+// app.use(
+//   BodyParser({
+//     enableTypes: ["json"],
+//     jsonLimit: "5mb",
+//     strict: true,
+//     onerror: function(err, ctx) {
+//       ctx.throw("body parse error", 422);
+//     }
+//   })
+// );
 app.use(
-  BodyParser({
-    enableTypes: ["json"],
-    jsonLimit: "5mb",
-    strict: true,
-    onerror: function(err, ctx) {
-      ctx.throw("body parse error", 422);
-    }
-  })
+  BodyParser({ onerror: (err, ctx) => ctx.throw("body parse error", 422) })
 );
 
 app.use(respond());
